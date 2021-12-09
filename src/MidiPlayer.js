@@ -580,7 +580,10 @@ not.
         }
 
         this.volume = volume;
-        this.gainNode.gain.value = volume / 100;
+        if (this.gainNode) {
+            //Not undefined
+            this.gainNode.gain.value = volume / 100;
+        }
     }
 
     freeMemory() {
